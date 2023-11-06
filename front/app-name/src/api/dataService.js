@@ -8,3 +8,13 @@ export const fetchGroups = async () => {
     // Utiliza Axios para hacer una solicitud GET a la URL de grupos.
     return axios.get(`${BASE_URL}/groups`)
 }
+
+// Función asincrónica para recuperar las personas de un grupo desde el servidor.
+export const fetchPersonsByGroup = async (groupId) => {
+    return axios.get(`${BASE_URL}/groups/persons/${groupId}`);
+}
+
+// Función asincrónica para recuperar los grupos de una persona desde el servidor.
+export const fetchGroupsByPerson = async (personId) => {
+    return axios.get(`${BASE_URL}/persons/groups/${personId}`);
+}
