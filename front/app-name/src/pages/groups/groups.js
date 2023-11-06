@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchGroups, fetchPersonsByGroup, fetchGroupsByPerson } from "../../api/dataService";
+import { fetchGroups, fetchPersonsByGroup, fetchGroupsByPerson} from "../../api/dataService";
 import DataGrid, { Column, MasterDetail } from 'devextreme-react/data-grid';
 
 const DetailGrid = ({ personKey }) => {

@@ -17,6 +17,10 @@ export const navigation = [
         path: '/tasks'
       },
       {
+        text: 'Persons',
+        path: '/persons'
+      },
+      {
         text: 'Groups',
         path: '/groups'
       }

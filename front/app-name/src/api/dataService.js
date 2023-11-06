@@ -19,6 +19,6 @@ export const fetchGroupsByPerson = async (personId) => {
     return axios.get(`${BASE_URL}/persons/groups/${personId}`);
 }
 
-export const fecthPersons = async () => {
+export const fetchPersons = async () => {
     return axios.get(`${BASE_URL}/persons`);
 }
