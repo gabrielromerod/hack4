@@ -5,6 +5,9 @@ import java.util.Set;
 
 import jakarta.persistence.*;
 
+
+
+
 @Entity
 @Table(name = "groups")
 public class Group {
@@ -12,6 +15,11 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tipo_id", referencedColumnName = "id")
+    private TipoGrupo address;
+
 
     @ManyToMany
     @JoinTable(
@@ -28,6 +36,7 @@ public class Group {
         this.name = name;
         this.persons = persons;
     }
+
 
     public Long getId() {
         return id;
