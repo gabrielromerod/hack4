@@ -1,22 +1,24 @@
 package com.example.demo.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import org.springframework.boot.autoconfigure.web.WebProperties;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
-public class TipoGrupo {
+public class TypeGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    public TipoGrupo() {}
+    @OneToMany(mappedBy = "grupo", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Group> grupos = new ArrayList<>();
 
-    public TipoGrupo(Long id,String name) {
+    public TypeGroup() {}
+
+    public TypeGroup(Long id,String name) {
         this.id = id;
         this.name = name;
     }

@@ -18,8 +18,7 @@ public class Group {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "tipo_id", referencedColumnName = "id")
-    private TipoGrupo address;
-
+    private TypeGroup address;
 
     @ManyToMany
     @JoinTable(
